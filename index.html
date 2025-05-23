@@ -1,80 +1,103 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bizzard.xyz is for sale</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
-        .container {
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 100%;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
-        }
-        h1 {
-            color: #00ffcc;
-            margin-bottom: 20px;
-        }
-        .price {
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-        .section {
-            margin-top: 20px;
-        }
-        .label {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .contact a {
-            color: #00ffcc;
-            text-decoration: none;
-            display: block;
-            margin-top: 5px;
-        }
-        .wallet {
-            background: #333;
-            padding: 10px;
-            border-radius: 8px;
-            word-wrap: break-word;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bizzard.xyz - Premium Domain for Sale</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    header {
+      background: #ffffffcc;
+      padding: 20px;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    p.description {
+      margin: 20px 10px;
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background-color: #3f51b5;
+      color: white;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #303f9f;
+    }
+    .copy-field {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin: 10px auto;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      max-width: 400px;
+    }
+    input {
+      border: none;
+      flex: 1;
+      font-size: 1rem;
+    }
+    button.copy {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>bizzard.xyz is for sale</h1>
-        <div class="price">Price: <strong>$5,000</strong> (USDT accepted)</div>
+  <header>
+    <h1>Bizzard.xyz</h1>
+    <p class="description">
+      This premium domain will soon host a professional penetration testing & market analytics platform. Expect specialized tools for ICT, fundamental analysis, algorithmic modeling, and more. Buy it now and own the brand before it launches.
+    </p>
+  </header><a class="btn" href="mailto:benamieuralaeddine@gmail.com">Email Me</a> <a class="btn" href="https://t.me/Beamieurala" target="_blank">Telegram</a> <a class="btn" href="https://wa.me/213658560659" target="_blank">WhatsApp</a>
 
-        <div class="section">
-            <div class="label">Binance (BEP20 USDT):</div>
-            <div class="wallet">0x93c9ac00c6dffde17511080c84064727733ec144</div>
-
-            <div class="label">MyFin IBAN:</div>
-            <div class="wallet">BG93MYFN401210E2118897</div>
-        </div>
-
-        <div class="section contact">
-            <div class="label">Contact:</div>
-            <a href="https://t.me/Beamieurala" target="_blank">Telegram: @Beamieurala</a>
-            <a href="mailto:benamieuralaeddine@gmail.com">Email: benamieuralaeddine@gmail.com</a>
-            <a href="https://wa.me/213658560659" target="_blank">WhatsApp: +213658560659</a>
-        </div>
-
-        <div class="section">
-            <p>This premium domain will soon host a professional penetration testing platform. Buy it now and own the brand before it launches.</p>
-        </div>
-    </div>
-</body>
+  <div class="copy-field">
+    <input type="text" id="iban" value="BG93MYFN401210E2118897" readonly>
+    <button class="copy" onclick="copyText('iban')">Copy IBAN</button>
+  </div>
+  <div class="copy-field">
+    <input type="text" id="usdt" value="0x93c9ac00c6dffde17511080c84064727733ec144" readonly>
+    <button class="copy" onclick="copyText('usdt')">Copy BEP20</button>
+  </div>  <footer>
+    &copy; 2025 Bizzard.xyz — All rights reserved.
+  </footer>  <script>
+    function copyText(id) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(input.value);
+      alert("Copied: " + input.value);
+    }
+  </script></body>
 </html>
