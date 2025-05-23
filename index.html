@@ -2,151 +2,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>•BIZZARD•</title>
+  <title>BIZZARD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --background-light: #ffffff;
-      --text-light: #000000;
-      --background-dark: #0a0a0a;
-      --text-dark: #ffffff;
-      --green: #00ff00;
-      --font-finance: 'Courier New', monospace;
-    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--background-light);
-      color: var(--text-light);
-      transition: background-color 0.3s, color 0.3s;
+      font-family: 'Share Tech Mono', monospace;
+      background-color: #000;
+      color: white;
+      transition: background-color 0.5s, color 0.5s;
     }
-    body.dark-mode {
-      background-color: var(--background-dark);
-      color: var(--text-dark);
-    }
-    header {
+    .container {
+      padding: 20px;
       text-align: center;
-      padding: 2rem;
+    }
+    .header {
       font-size: 2.5rem;
       font-weight: bold;
+      margin-top: 30px;
     }
     .description {
-      text-align: center;
-      font-family: var(--font-finance);
-      font-size: 1.25rem;
-      color: var(--green);
-      text-shadow: 0 0 10px #00ff00;
-      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      color: darkgreen;
+      margin-top: 20px;
     }
-    .contact-info {
-      text-align: center;
-      margin: 2rem;
-    }
-    .contact-info button {
-      margin: 0.5rem;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .toggle-theme {
-      display: block;
-      margin: 2rem auto;
-      padding: 0.5rem 1rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      font-weight: bold;
-    }
-    footer.light-mode {
-      color: black;
-    }
-    footer.dark-mode {
-      color: white;
-    }
-    .candlestick-container {
+    .candlesticks {
       display: flex;
       justify-content: center;
-      align-items: flex-end;
-      height: 200px;
-      margin: 2rem auto;
-      width: 80%;
+      align-items: end;
+      height: 150px;
+      margin: 40px 0;
     }
     .candle {
-      width: 10px;
+      width: 12px;
       margin: 0 5px;
-      background-color: green;
-      animation: appear 0.5s ease-in-out forwards;
-      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: appear 1s ease-in-out forwards;
+    }
+    .wick {
+      width: 2px;
+      height: 20px;
+      background: #fff;
+    }
+    .body {
+      width: 100%;
+      height: 40px;
+    }
+    .up {
+      background-color: #00ff00;
+    }
+    .down {
+      background-color: red;
     }
     @keyframes appear {
-      from { height: 0; opacity: 0; }
-      to { height: 100px; opacity: 1; }
+      0% {opacity: 0; transform: scaleY(0.5)}
+      100% {opacity: 1; transform: scaleY(1)}
     }
-    .intro-animation {
-      animation: flicker 2s ease-in-out forwards;
-      text-align: center;
-      font-size: 1.5rem;
+    .contact-btns button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .copy-btn {
+      background-color: #333;
+      color: white;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: #555;
+      color: white;
+      cursor: pointer;
+    }
+    .footer {
+      margin-top: 50px;
       font-weight: bold;
-      margin-top: 2rem;
     }
-    @keyframes flicker {
-      0% { opacity: 0; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
+    .light {
+      background-color: #fff;
+      color: black;
     }
-    .logo-ai {
-      width: 50px;
-      display: block;
-      margin: 1rem auto;
+    .light .footer {
+      color: black;
+    }
+    .logo {
+      margin-top: 20px;
+    }
+    .logo img {
+      width: 100px;
     }
   </style>
 </head>
 <body>
-  <header>•BIZZARD•</header>
-  <div class="intro-animation">Welcome to the future of penetration testing and financial analysis</div>
-  <div class="description">
-    This premium domain will soon host a professional penetration testing platform. Buy it now and own the brand before it launches.<br>
-    Expect a market analysis system powered by tools representing schools of thought: ICT, fundamentals, algorithmic strategies and more.
+  <div class="dark-toggle" onclick="toggleMode()">Switch Mode</div>
+  <div class="container">
+    <div class="header">•BIZZARD•</div>
+    <div class="description">
+      This premium domain will soon host a professional penetration testing platform. Buy it now and own the brand before it launches.<br>
+      Expect a powerful market analysis system with tools based on ICT, fundamental, and algorithmic schools.
+    </div>
+    <div class="candlesticks" id="candles"></div>
+    <div class="contact-btns">
+      <button class="copy-btn" onclick="copyText('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance Address</button>
+      <button class="copy-btn" onclick="copyText('BG93MYFN401210E2118897')">Copy MyFin IBAN</button>
+      <button onclick="window.location.href='https://t.me/Beamieurala'">Telegram</button>
+      <button onclick="window.location.href='mailto:benamieuralaeddine@gmail.com'">Email</button>
+      <button onclick="window.location.href='https://wa.me/213658560659'">WhatsApp</button>
+    </div>
+    <div class="description">
+      The services will be powered by AI and a long experience in programming and finance
+    </div>
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Google_AI_logo.svg" alt="Google AI Logo">
+    </div>
+    <div class="footer">
+      © 2025 •BIZZARD• all rights reserved.
+    </div>
   </div>
-  <div class="candlestick-container" id="candles"></div>
-  <div class="contact-info">
-    <button onclick="copyText('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance USDT</button>
-    <button onclick="copyText('BG93MYFN401210E2118897')">Copy MyFin IBAN</button>
-    <br />
-    <button onclick="location.href='https://t.me/Beamieurala'">Telegram</button>
-    <button onclick="location.href='mailto:benamieuralaeddine@gmail.com'">Email</button>
-    <button onclick="location.href='https://wa.me/213658560659'">WhatsApp</button>
-  </div>
-  <img class="logo-ai" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Google_AI_logo.svg/2560px-Google_AI_logo.svg.png" alt="Google AI logo">
-  <div class="description">
-    The services will be powered by AI and a long experience in programming and finance
-  </div>
-  <button class="toggle-theme" onclick="toggleTheme()">Toggle Dark Mode</button>
-  <footer id="footer">© 2025 •BIZZARD• all rights reserved.</footer>
   <script>
     function copyText(text) {
-      navigator.clipboard.writeText(text);
-      alert("Copied to clipboard: " + text);
-    }function toggleTheme() {
-  document.body.classList.toggle("dark-mode");
-  document.getElementById("footer").classList.toggle("dark-mode");
-  document.getElementById("footer").classList.toggle("light-mode");
-}
-
-window.onload = () => {
-  const container = document.getElementById("candles");
-  for (let i = 0; i < 4; i++) {
-    setTimeout(() => {
-      const div = document.createElement("div");
-      div.classList.add("candle");
-      container.appendChild(div);
-    }, i * 500);
-  }
-};
-
+      navigator.clipboard.writeText(text).then(() => alert("Copied!"));
+    }
+    function toggleMode() {
+      document.body.classList.toggle("light");
+    }
+    const candles = [
+      { dir: 'up', height: 30 },
+      { dir: 'down', height: 25 },
+      { dir: 'up', height: 40 },
+      { dir: 'up', height: 45 },
+    ];
+    const container = document.getElementById('candles');
+    candles.forEach((c, i) => {
+      const el = document.createElement('div');
+      el.className = 'candle';
+      el.style.animationDelay = `${i * 0.5}s`;
+      el.innerHTML = `
+        <div class="wick"></div>
+        <div class="body ${c.dir}" style="height: ${c.height}px"></div>
+        <div class="wick"></div>
+      `;
+      container.appendChild(el);
+    });
   </script>
 </body>
 </html>
