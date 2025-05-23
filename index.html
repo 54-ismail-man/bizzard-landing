@@ -2,129 +2,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BIZZARD</title>
+  <title>•BIZZARD•</title>
   <style>
+    :root {
+      --background-light: #ffffff;
+      --text-light: #000000;
+      --background-dark: #0a0a0a;
+      --text-dark: #ffffff;
+      --green: #00ff00;
+      --font-finance: 'Courier New', monospace;
+    }
     body {
       margin: 0;
-      font-family: 'Courier New', Courier, monospace;
-      background-color: #000;
-      color: #0f0;
-      transition: background-color 0.5s, color 0.5s;
+      font-family: Arial, sans-serif;
+      background-color: var(--background-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
     }
-    .light-mode {
-      background-color: #fff;
-      color: #000;
-    }
-    .glow {
-      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
+    body.dark-mode {
+      background-color: var(--background-dark);
+      color: var(--text-dark);
     }
     header {
       text-align: center;
-      padding: 20px;
-      font-size: 2em;
+      padding: 2rem;
+      font-size: 2.5rem;
       font-weight: bold;
     }
-    .container {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+    .description {
+      text-align: center;
+      font-family: var(--font-finance);
+      font-size: 1.25rem;
+      color: var(--green);
+      text-shadow: 0 0 10px #00ff00;
+      margin-bottom: 2rem;
     }
-    .button {
-      padding: 10px 20px;
-      margin: 10px;
+    .contact-info {
+      text-align: center;
+      margin: 2rem;
+    }
+    .contact-info button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
       border: none;
-      cursor: pointer;
-      background-color: #222;
-      color: #0f0;
-      font-weight: bold;
       border-radius: 5px;
+      cursor: pointer;
     }
-    .light-mode .button {
-      background-color: #ddd;
-      color: #000;
-    }
-    .contact a {
+    .toggle-theme {
       display: block;
-      margin: 10px 0;
-      text-decoration: none;
-      color: inherit;
-    }
-    .candlesticks {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-    }
-    .candle {
-      width: 10px;
-      height: 0;
-      background: #0f0;
-      margin: 0 2px;
-      animation: rise 0.5s ease-in forwards;
-    }
-    @keyframes rise {
-      from { height: 0; }
-      to { height: 50px; }
+      margin: 2rem auto;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      cursor: pointer;
     }
     footer {
       text-align: center;
-      padding: 20px;
+      margin-top: 2rem;
       font-weight: bold;
     }
-    .light-mode footer {
-      color: #000;
+    footer.light-mode {
+      color: black;
     }
-    .dark-mode footer {
-      color: #fff;
+    footer.dark-mode {
+      color: white;
     }
-    .intro {
+    .candlestick-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 200px;
+      margin: 2rem auto;
+      width: 80%;
+    }
+    .candle {
+      width: 10px;
+      margin: 0 5px;
+      background-color: green;
+      animation: appear 0.5s ease-in-out forwards;
+      opacity: 0;
+    }
+    @keyframes appear {
+      from { height: 0; opacity: 0; }
+      to { height: 100px; opacity: 1; }
+    }
+    .intro-animation {
+      animation: flicker 2s ease-in-out forwards;
       text-align: center;
-      font-size: 1.2em;
-      margin: 20px 0;
-      animation: fadein 2s;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 2rem;
     }
-    @keyframes fadein {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes flicker {
+      0% { opacity: 0; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    .logo-ai {
+      width: 50px;
+      display: block;
+      margin: 1rem auto;
     }
   </style>
 </head>
-<body class="dark-mode">
-  <header class="glow">•BIZZARD•</header>  <div class="container">
-    <div class="intro">This premium domain will soon host a professional penetration testing platform. Buy it now and own the brand before it launches.<br>
-    Expect a powerful AI-driven market analysis system with tools for ICT, fundamental, and algorithmic analysis.</div><div class="candlesticks">
-  <div class="candle" style="animation-delay: 0.1s;"></div>
-  <div class="candle" style="animation-delay: 0.3s;"></div>
-  <div class="candle" style="animation-delay: 0.5s;"></div>
-  <div class="candle" style="animation-delay: 0.7s;"></div>
-</div>
-
-<button class="button" onclick="copyText('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance USDT Address</button>
-<button class="button" onclick="copyText('BG93MYFN401210E2118897')">Copy MyFin IBAN</button>
-
-<div class="contact">
-  <a href="https://t.me/Beamieurala">Telegram</a>
-  <a href="mailto:benamieuralaeddine@gmail.com">Email</a>
-  <a href="https://wa.me/213658560659">WhatsApp</a>
-</div>
-
-<p style="text-align:center; margin-top: 40px;">The services will be powered by AI and a long experience in programming and finance.</p>
-<p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Google_AI_logo.svg" alt="Google AI" width="100"/></p>
-
-<div style="text-align: center;">
-  <button class="button" onclick="toggleMode()">Toggle Mode</button>
-</div>
-
-  </div>  <footer>© 2025 •BIZZARD• All rights reserved.</footer>  <script>
+<body>
+  <header>•BIZZARD•</header>
+  <div class="intro-animation">Welcome to the future of penetration testing and financial analysis</div>
+  <div class="description">
+    This premium domain will soon host a professional penetration testing platform. Buy it now and own the brand before it launches.<br>
+    Expect a market analysis system powered by tools representing schools of thought: ICT, fundamentals, algorithmic strategies and more.
+  </div>
+  <div class="candlestick-container" id="candles"></div>
+  <div class="contact-info">
+    <button onclick="copyText('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance USDT</button>
+    <button onclick="copyText('BG93MYFN401210E2118897')">Copy MyFin IBAN</button>
+    <br />
+    <button onclick="location.href='https://t.me/Beamieurala'">Telegram</button>
+    <button onclick="location.href='mailto:benamieuralaeddine@gmail.com'">Email</button>
+    <button onclick="location.href='https://wa.me/213658560659'">WhatsApp</button>
+  </div>
+  <img class="logo-ai" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Google_AI_logo.svg/2560px-Google_AI_logo.svg.png" alt="Google AI logo">
+  <div class="description">
+    The services will be powered by AI and a long experience in programming and finance
+  </div>
+  <button class="toggle-theme" onclick="toggleTheme()">Toggle Dark Mode</button>
+  <footer id="footer">© 2025 •BIZZARD• all rights reserved.</footer>
+  <script>
     function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Copied!");
-      });
-    }
+      navigator.clipboard.writeText(text);
+      alert("Copied to clipboard: " + text);
+    }function toggleTheme() {
+  document.body.classList.toggle("dark-mode");
+  document.getElementById("footer").classList.toggle("dark-mode");
+  document.getElementById("footer").classList.toggle("light-mode");
+}
 
-    function toggleMode() {
-      const body = document.body;
-      body.classList.toggle("light-mode");
-      body.classList.toggle("dark-mode");
-    }
-  </script></body>
+window.onload = () => {
+  const container = document.getElementById("candles");
+  for (let i = 0; i < 4; i++) {
+    setTimeout(() => {
+      const div = document.createElement("div");
+      div.classList.add("candle");
+      container.appendChild(div);
+    }, i * 500);
+  }
+};
+
+  </script>
+</body>
 </html>
