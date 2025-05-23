@@ -2,102 +2,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bizzard.xyz - a premium Domain for Sale!!</title>
+  <title>BIZZARD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #eef2f3, #8e9eab);
-      color: #333;
       margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    header {
-      background: #ffffffcc;
-      padding: 20px;
-      width: 100%;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    p.description {
-      margin: 20px 10px;
-      font-size: 1.2rem;
-      max-width: 700px;
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 8px;
-      background-color: #3f51b5;
-      color: white;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-    .btn:hover {
-      background-color: #303f9f;
-    }
-    .copy-field {
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin: 10px auto;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      max-width: 400px;
-    }
-    input {
-      border: none;
-      flex: 1;
-      font-size: 1rem;
-    }
-    button.copy {
-      background: #4caf50;
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
+      font-family: 'Share Tech Mono', monospace;
+      background-color: #000;
+      color: #0f0;
+      overflow-x: hidden;
+    }.header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.intro {
+  animation: flicker 2s ease-in-out infinite;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 2rem;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  background-color: #111;
+  color: #0f0;
+  border: 1px solid #0f0;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-shadow: 0 0 5px #0f0;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-weight: bold;
+  color: #fff;
+  background: #111;
+  text-shadow: 0 0 5px #fff;
+}
+
+.ai-section {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #0f0;
+}
+
+.candlestick-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 200px;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.candle {
+  width: 10px;
+  margin: 0 4px;
+  background-color: #0f0;
+  animation: growCandle 1s ease forwards;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+@keyframes growCandle {
+  to { transform: scaleY(1); }
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #222;
+  color: #0f0;
+  padding: 0.5rem;
+  border: 1px solid #0f0;
+  cursor: pointer;
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>•BIZZARD•</h1>
-    <p class="description">
-      This premium domain will soon host a professional market analytics platform. Expect specialized tools for ICT, fundamental analysis, algorithmic modeling, and more. Buy it now and own the brand before it launches.
-    </p>
-  </header><a class="btn" href="mailto:benamieuralaeddine@gmail.com">Email Me</a> <a class="btn" href="https://t.me/Beamieurala" target="_blank">Telegram</a> <a class="btn" href="https://wa.me/213658560659" target="_blank">WhatsApp</a>
-
-  <div class="copy-field">
-    <input type="text" id="iban" value="BG93MYFN401210E2118897" readonly>
-    <button class="copy" onclick="copyText('iban')">Copy IBAN</button>
-  </div>
-  <div class="copy-field">
-    <input type="text" id="usdt" value="0x93c9ac00c6dffde17511080c84064727733ec144" readonly>
-    <button class="copy" onclick="copyText('usdt')">Copy BEP20</button>
-  </div>  <footer>
-    &copy; 2025 •BIZZARD• — All rights reserved.
-  </footer>  <script>
-    function copyText(id) {
-      const input = document.getElementById(id);
-      input.select();
-      input.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(input.value);
-      alert("Copied: " + input.value);
+  <div class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</div>
+  <div class="header">• BIZZARD •</div>  <div class="intro">
+    This premium domain will soon host a professional penetration testing platform.<br>
+    Expect advanced market analysis tools powered by schools like ICT, fundamental analysis, algorithmic trading, and much more.
+  </div>  <div class="candlestick-container" id="candles"></div>  <div class="buttons">
+    <button onclick="copyText('BG93MYFN401210E2118897')">Copy IBAN</button>
+    <button onclick="copyText('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance Address</button>
+    <button onclick="window.location.href='mailto:benamieuralaeddine@gmail.com'">Email</button>
+    <button onclick="window.open('https://t.me/Beamieurala')">Telegram</button>
+    <button onclick="window.open('https://wa.me/213658560659')">WhatsApp</button>
+  </div>  <div class="ai-section">
+    <p>Services will be powered by AI and a long experience in programming and finance</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google AI Logo" height="40">
+  </div>  <div class="footer">© 2025 • BIZZARD • All rights reserved.</div>  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert('Copied: ' + text);
     }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('light');
+    }
+
+    const candleHeights = [40, 60, 30, 70];
+    const container = document.getElementById('candles');
+    candleHeights.forEach((height, i) => {
+      const div = document.createElement('div');
+      div.className = 'candle';
+      div.style.height = `${height}px`;
+      div.style.animationDelay = `${i * 0.5}s`;
+      container.appendChild(div);
+    });
   </script></body>
 </html>
