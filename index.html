@@ -3,140 +3,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BIZZARD</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Courier New', Courier, monospace;
       background-color: #000;
       color: #0f0;
-      overflow-x: hidden;
-    }.header {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 1rem;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-.intro {
-  animation: flicker 2s ease-in-out infinite;
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 2rem;
-  color: #0f0;
-  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-button {
-  background-color: #111;
-  color: #0f0;
-  border: 1px solid #0f0;
-  padding: 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  text-shadow: 0 0 5px #0f0;
-}
-
-.footer {
-  text-align: center;
-  padding: 2rem;
-  font-weight: bold;
-  color: #fff;
-  background: #111;
-  text-shadow: 0 0 5px #fff;
-}
-
-.ai-section {
-  text-align: center;
-  padding: 1rem;
-  font-size: 1rem;
-  color: #0f0;
-}
-
-.candlestick-container {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  height: 200px;
-  margin: 2rem auto;
-  width: 80%;
-  max-width: 600px;
-}
-
-.candle {
-  width: 10px;
-  margin: 0 4px;
-  background-color: #0f0;
-  animation: growCandle 1s ease forwards;
-  transform: scaleY(0);
-  transform-origin: bottom;
-}
-
-@keyframes growCandle {
-  to { transform: scaleY(1); }
-}
-
-.dark-toggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #222;
-  color: #0f0;
-  padding: 0.5rem;
-  border: 1px solid #0f0;
-  cursor: pointer;
-}
-
+      transition: background-color 0.5s, color 0.5s;
+    }
+    .light-mode {
+      background-color: #fff;
+      color: #000;
+    }
+    .glow {
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: #222;
+      color: #0f0;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .light-mode .button {
+      background-color: #ddd;
+      color: #000;
+    }
+    .contact a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: inherit;
+    }
+    .candlesticks {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .candle {
+      width: 10px;
+      height: 0;
+      background: #0f0;
+      margin: 0 2px;
+      animation: rise 0.5s ease-in forwards;
+    }
+    @keyframes rise {
+      from { height: 0; }
+      to { height: 50px; }
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+    }
+    .light-mode footer {
+      color: #000;
+    }
+    .dark-mode footer {
+      color: #fff;
+    }
+    .intro {
+      text-align: center;
+      font-size: 1.2em;
+      margin: 20px 0;
+      animation: fadein 2s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
-<body>
-  <div class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</div>
-  <div class="header">• BIZZARD •</div>  <div class="intro">
-    This premium domain will soon host a professional penetration testing platform.<br>
-    Expect advanced market analysis tools powered by schools like ICT, fundamental analysis, algorithmic trading, and much more.
-  </div>  <div class="candlestick-container" id="candles"></div>  <div class="buttons">
-    <button onclick="copyText('BG93MYFN401210E2118897')">Copy IBAN</button>
-    <button onclick="copyText('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance Address</button>
-    <button onclick="window.location.href='mailto:benamieuralaeddine@gmail.com'">Email</button>
-    <button onclick="window.open('https://t.me/Beamieurala')">Telegram</button>
-    <button onclick="window.open('https://wa.me/213658560659')">WhatsApp</button>
-  </div>  <div class="ai-section">
-    <p>Services will be powered by AI and a long experience in programming and finance</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google AI Logo" height="40">
-  </div>  <div class="footer">© 2025 • BIZZARD • All rights reserved.</div>  <script>
+<body class="dark-mode">
+  <header class="glow">•BIZZARD•</header>  <div class="container">
+    <div class="intro">This premium domain will soon host a professional penetration testing platform. Buy it now and own the brand before it launches.<br>
+    Expect a powerful AI-driven market analysis system with tools for ICT, fundamental, and algorithmic analysis.</div><div class="candlesticks">
+  <div class="candle" style="animation-delay: 0.1s;"></div>
+  <div class="candle" style="animation-delay: 0.3s;"></div>
+  <div class="candle" style="animation-delay: 0.5s;"></div>
+  <div class="candle" style="animation-delay: 0.7s;"></div>
+</div>
+
+<button class="button" onclick="copyText('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance USDT Address</button>
+<button class="button" onclick="copyText('BG93MYFN401210E2118897')">Copy MyFin IBAN</button>
+
+<div class="contact">
+  <a href="https://t.me/Beamieurala">Telegram</a>
+  <a href="mailto:benamieuralaeddine@gmail.com">Email</a>
+  <a href="https://wa.me/213658560659">WhatsApp</a>
+</div>
+
+<p style="text-align:center; margin-top: 40px;">The services will be powered by AI and a long experience in programming and finance.</p>
+<p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Google_AI_logo.svg" alt="Google AI" width="100"/></p>
+
+<div style="text-align: center;">
+  <button class="button" onclick="toggleMode()">Toggle Mode</button>
+</div>
+
+  </div>  <footer>© 2025 •BIZZARD• All rights reserved.</footer>  <script>
     function copyText(text) {
-      navigator.clipboard.writeText(text);
-      alert('Copied: ' + text);
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied!");
+      });
     }
 
-    function toggleDarkMode() {
-      document.body.classList.toggle('light');
+    function toggleMode() {
+      const body = document.body;
+      body.classList.toggle("light-mode");
+      body.classList.toggle("dark-mode");
     }
-
-    const candleHeights = [40, 60, 30, 70];
-    const container = document.getElementById('candles');
-    candleHeights.forEach((height, i) => {
-      const div = document.createElement('div');
-      div.className = 'candle';
-      div.style.height = `${height}px`;
-      div.style.animationDelay = `${i * 0.5}s`;
-      container.appendChild(div);
-    });
   </script></body>
 </html>
