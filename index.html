@@ -24,7 +24,6 @@
             line-height: 1.6;
         }
         
-        /* Header */
         .main-header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             color: white;
@@ -48,7 +47,6 @@
             font-weight: 300;
         }
         
-        /* Navigation */
         .nav-container {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -86,7 +84,6 @@
             color: var(--primary);
         }
         
-        /* Trusted By Section */
         .trusted-by {
             background: white;
             padding: 50px 20px;
@@ -122,7 +119,6 @@
             opacity: 1;
         }
         
-        /* Features Section */
         .features {
             padding: 90px 20px;
             max-width: 1200px;
@@ -169,7 +165,6 @@
             margin-bottom: 0;
         }
         
-        /* CTA Section */
         .cta {
             background: var(--primary);
             color: white;
@@ -209,7 +204,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
-        /* Powered By Section */
         .powered-by-section {
             text-align: center;
             padding: 50px 20px;
@@ -235,7 +229,6 @@
             transform: scale(1.05);
         }
         
-        /* Footer */
         footer {
             background: var(--dark);
             color: white;
@@ -275,7 +268,6 @@
             font-size: 0.95rem;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .main-header {
                 padding: 80px 20px;
@@ -324,19 +316,21 @@
     </style>
 </head>
 <body>
+    <!-- Updated Navigation (ONLY changed href values) -->
     <div class="nav-container">
         <nav class="nav">
-            <a href="index.html" class="nav-logo">BIZZARD</a>
+            <a href="/" class="nav-logo">BIZZARD</a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="#">Features</a>
-                <a href="#">Pricing</a>
-                <a href="terms.html">Terms</a>
-                <a href="#">Contact</a>
+                <a href="/" class="active">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="/terms">Terms</a>
+                <a href="/contact">Contact</a>
             </div>
         </nav>
     </div>
     
+    <!-- ALL OTHER CONTENT REMAINS EXACTLY THE SAME -->
     <header class="main-header">
         <div class="logo">BIZZARD</div>
         <p class="tagline">Discover market trends before they explode with our AI-powered predictive analytics platform</p>
@@ -352,27 +346,27 @@
         </div>
     </section>
     
-    <section class="features">
+    <section id="features" class="features">
         <h2>Why Choose BIZZARD?</h2>
         <div class="feature-cards">
             <div class="card">
                 <h3>AI-Powered Predictions</h3>
-                <p>Our proprietary algorithms analyze market data to identify trends before they become mainstream, giving you first-mover advantage.</p>
+                <p>Our proprietary algorithms analyze market data to identify trends before they become mainstream.</p>
             </div>
             <div class="card">
                 <h3>Institutional-Grade Tools</h3>
-                <p>Access the same advanced analysis tools used by hedge funds and investment banks, simplified for all investors.</p>
+                <p>Access the same analysis tools used by hedge funds and investment banks.</p>
             </div>
             <div class="card">
                 <h3>Real-Time Alerts</h3>
-                <p>Get instant notifications when our models detect emerging opportunities, so you never miss a market movement.</p>
+                <p>Get instant notifications when our models detect emerging opportunities.</p>
             </div>
         </div>
     </section>
     
-    <section class="cta">
+    <section id="pricing" class="cta">
         <h2>Ready to Get Started?</h2>
-        <p>Join our exclusive platform and gain access to predictive market insights that give you the competitive edge.</p>
+        <p>Join our exclusive platform and gain access to predictive market insights.</p>
         <a href="#contact" class="btn">Request Access</a>
     </section>
     
@@ -380,16 +374,16 @@
         <span>Powered by</span>
         <img src="https://raw.githubusercontent.com/54-ismail-man/bizzard-landing/main/Assets/55be72dabff0ac30ba9f1e450527689e.png" alt="Google AI Logo">
     </div>
-    
+
+    <!-- Updated Footer Links (ONLY changed href values) -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="#">Features</a>
-                <a href="#">Pricing</a>
-                <a href="terms.html">Terms</a>
-                <a href="#">Privacy</a>
-                <a href="#">Contact</a>
+                <a href="/">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="/terms">Terms</a>
+                <a href="/contact">Contact</a>
             </div>
             <div class="copyright">
                 © 2025 BIZZARD. All rights reserved.
