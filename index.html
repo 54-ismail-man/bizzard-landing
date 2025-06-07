@@ -9,9 +9,11 @@
     <style>
         :root {
             --primary: #2563eb;
+            --primary-dark: #1e3a8a;
             --dark: #1e293b;
             --light: #f8fafc;
             --gray: #94a3b8;
+            --gray-light: #e2e8f0;
         }
         
         body {
@@ -24,32 +26,32 @@
         
         /* Header */
         .main-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
-            position: relative;
         }
         
         .logo {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.5px;
         }
         
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
             opacity: 0.9;
+            font-weight: 300;
         }
         
         /* Trusted By Section */
         .trusted-by {
             background: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .trusted-by h3 {
@@ -74,6 +76,7 @@
             color: var(--dark);
             opacity: 0.8;
             transition: opacity 0.3s;
+            font-size: 1.1rem;
         }
         
         .brand:hover {
@@ -82,39 +85,49 @@
         
         /* Features Section */
         .features {
-            padding: 80px 20px;
+            padding: 90px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
         
         .features h2 {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 60px;
+            font-size: 2.2rem;
+            margin-bottom: 70px;
+            color: var(--primary-dark);
         }
         
         .feature-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
         
         .card {
             background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-light);
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
         
         .card h3 {
             margin-top: 0;
             color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            color: var(--dark);
+            opacity: 0.9;
+            margin-bottom: 0;
         }
         
         /* CTA Section */
@@ -122,53 +135,65 @@
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
+            background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 30%);
         }
         
         .cta h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
         
         .cta p {
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto 45px;
             opacity: 0.9;
+            font-size: 1.1rem;
         }
         
         .btn {
             display: inline-block;
             background: white;
             color: var(--primary);
-            padding: 12px 30px;
+            padding: 15px 35px;
             border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
         /* Powered By Section */
         .powered-by-section {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
+            gap: 15px;
+            font-size: 1rem;
             color: var(--gray);
+            border-top: 1px solid var(--gray-light);
+            border-bottom: 1px solid var(--gray-light);
         }
         
         .powered-by-section img {
             width: 120px;
             height: 60px;
-            vertical-align: middle;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .powered-by-section img:hover {
+            transform: scale(1.05);
         }
         
         /* Footer */
@@ -177,17 +202,38 @@
             color: white;
             text-align: center;
             padding: 30px 20px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
+            .main-header {
+                padding: 80px 20px;
+            }
+            
             .logo {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
             }
             
             .brands {
-                gap: 20px;
+                gap: 25px;
+            }
+            
+            .brand {
+                font-size: 1rem;
+            }
+            
+            .features h2 {
+                font-size: 1.8rem;
+                margin-bottom: 50px;
+            }
+            
+            .cta h2 {
+                font-size: 1.9rem;
             }
         }
     </style>
@@ -213,15 +259,15 @@
         <div class="feature-cards">
             <div class="card">
                 <h3>AI-Powered Predictions</h3>
-                <p>Our proprietary algorithms analyze market data to identify trends before they become mainstream.</p>
+                <p>Our proprietary algorithms analyze market data to identify trends before they become mainstream, giving you first-mover advantage.</p>
             </div>
             <div class="card">
                 <h3>Institutional-Grade Tools</h3>
-                <p>Access the same analysis tools used by hedge funds and investment banks.</p>
+                <p>Access the same advanced analysis tools used by hedge funds and investment banks, simplified for all investors.</p>
             </div>
             <div class="card">
                 <h3>Real-Time Alerts</h3>
-                <p>Get instant notifications when our models detect emerging opportunities.</p>
+                <p>Get instant notifications when our models detect emerging opportunities, so you never miss a market movement.</p>
             </div>
         </div>
     </section>
@@ -238,7 +284,7 @@
     </div>
     
     <footer>
-        © 2025 BIZZARD. All rights reserved.
+        © 2025 BIZZARD. All rights reserved. | <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: white; text-decoration: none;">Terms of Service</a>
     </footer>
 </body>
 </html>
