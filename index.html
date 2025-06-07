@@ -1,6 +1,9 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BIZZARD - AI-powered market analysis platform with predictive financial tools">
     <title>BIZZARD</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
@@ -10,166 +13,243 @@
             background-color: #000;
             color: #0f0;
             text-align: center;
-        }header {
-        font-size: 2.5em;
-        font-weight: bold;
-        margin-top: 20px;
-        animation: fadeInFinance 2s ease-out forwards;
-        opacity: 0;
-    }
+            overflow-x: hidden;
+        }
+        
+        /* Enhanced Header */
+        header {
+            background: url('https://raw.githubusercontent.com/54-ismail-man/bizzard-landing/main/Assets/1000002368.png') center/cover no-repeat;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-shadow: 0 0 15px #0f0;
+            font-size: 3.5em;
+            border-bottom: 2px solid #0f0;
+            animation: fadeInFinance 1.5s ease-out forwards;
+            margin-bottom: 30px;
+        }
 
-    @keyframes fadeInFinance {
-        0% { transform: translateY(-50px); opacity: 0; }
-        100% { transform: translateY(0); opacity: 1; }
-    }
+        /* Google AI Badge */
+        .powered-by {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1px solid #0f0;
+            animation: pulse 2s infinite;
+        }
+        .powered-by img {
+            width: 32px;
+            height: 32px;
+            filter: drop-shadow(0 0 8px #0f0);
+        }
+        .powered-by span {
+            color: white;
+            font-size: 1em;
+            text-shadow: 0 0 5px #0f0;
+        }
 
-    .description {
-        font-size: 1.2em;
-        margin: 20px;
-    }
+        /* Content Styling */
+        .description {
+            font-size: 1.3em;
+            margin: 25px auto;
+            max-width: 800px;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
 
-    .candlestick-container {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        height: 120px;
-        margin: 20px 0;
-        gap: 10px;
-    }
+        /* Candlestick Animation */
+        .candlestick-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 150px;
+            margin: 30px 0;
+            gap: 15px;
+        }
+        .candle {
+            width: 14px;
+            position: relative;
+            animation: grow 2s ease-in-out forwards;
+        }
+        .candle::before,
+        .candle::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+        }
+        .candle::before {
+            width: 3px;
+            top: -25px;
+            height: 25px;
+        }
+        .candle::after {
+            width: 3px;
+            bottom: -25px;
+            height: 25px;
+        }
+        .green { background-color: #0f0; height: 70px; box-shadow: 0 0 15px #0f0; }
+        .red { background-color: red; height: 40px; box-shadow: 0 0 15px red; }
 
-    .candle {
-        width: 10px;
-        position: relative;
-        animation: grow 2s ease-in-out forwards;
-    }
+        /* Buttons */
+        .buttons {
+            margin: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        button {
+            background-color: #222;
+            color: #fff;
+            padding: 12px 25px;
+            border: 1px solid #0f0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Share Tech Mono';
+            font-size: 1em;
+            transition: all 0.3s;
+            min-width: 200px;
+        }
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+            box-shadow: 0 0 20px #0f0;
+            transform: translateY(-3px);
+        }
 
-    .candle::before,
-    .candle::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #fff;
-    }
+        /* Logo */
+        .logo-container {
+            margin: 40px 0;
+        }
+        .logo-container img {
+            width: 120px;
+            filter: drop-shadow(0 0 10px #0f0);
+        }
 
-    .candle::before {
-        width: 2px;
-        top: -20px;
-        height: 20px;
-    }
+        /* Footer */
+        .footer {
+            margin: 50px 0 30px;
+            font-size: 1.1em;
+            color: #0f0;
+            padding: 20px;
+            border-top: 1px solid #333;
+        }
 
-    .candle::after {
-        width: 2px;
-        bottom: -20px;
-        height: 20px;
-    }
+        /* Light Mode */
+        .light-mode {
+            background-color: #fff;
+            color: #000;
+        }
+        .light-mode .footer {
+            color: #000;
+        }
+        .light-mode button {
+            border-color: #000;
+        }
 
-    .green { background-color: #0f0; height: 50px; }
-    .red { background-color: red; height: 30px; }
+        /* Animations */
+        @keyframes fadeInFinance {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes grow {
+            from { transform: scaleY(0); }
+            to { transform: scaleY(1); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
 
-    @keyframes grow {
-        from { transform: scaleY(0); }
-        to { transform: scaleY(1); }
-    }
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header {
+                height: 200px;
+                font-size: 2.5em;
+            }
+            .description {
+                font-size: 1.1em;
+            }
+            button {
+                min-width: 160px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        BIZZARD
+        <div class="powered-by">
+            <img src="https://raw.githubusercontent.com/54-ismail-man/bizzard-landing/main/Assets/55be72dabff0ac30ba9f1e450527689e.png" alt="Google AI Logo">
+            <span>Powered by Google AI</span>
+        </div>
+    </header>
 
-    .buttons {
-        margin: 20px;
-    }
+    <div class="description">
+        Host a professional market analysis platform. Buy it now and own the brand before it launches.<br>
+        Expect a powerful market analysis system with tools based on ICT, fundamental, and mathematical models integrated with the most powerful AIs generating your best profits.
+    </div>
 
-    button {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        margin: 5px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+    <div class="candlestick-container">
+        <div class="candle green"></div>
+        <div class="candle red"></div>
+        <div class="candle green"></div>
+        <div class="candle green"></div>
+    </div>
 
-    .logo-container {
-        margin-top: 20px;
-    }
+    <div class="buttons">
+        <button onclick="copyToClipboard('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance Address</button>
+        <button onclick="copyToClipboard('BG93MYFN401210E2118897')">Copy MyFin IBAN</button>
+        <button onclick="window.location.href='https://t.me/Beamieurala'">Telegram</button>
+        <button onclick="window.location.href='mailto:benamieuralaeddine@gmail.com'">Email</button>
+        <button onclick="window.location.href='https://wa.me/213658560659'">WhatsApp</button>
+    </div>
 
-    .logo-container img {
-        width: 100px;
-        animation: pulse 2s infinite;
-    }
+    <div class="description">
+        The services will be powered by AI and a long experience in programming and finance
+    </div>
 
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-    }
+    <div class="logo-container">
+        <img src="https://raw.githubusercontent.com/54-ismail-man/bizzard-landing/main/Assets/55be72dabff0ac30ba9f1e450527689e.png" alt="BIZZARD Logo">
+    </div>
 
-    .footer {
-        margin: 40px 0 20px;
-        font-weight: bold;
-        color: white;
-    }
+    <div class="footer">
+        © 2025 •BIZZARD• all rights reserved.
+    </div>
 
-    .light-mode {
-        background-color: #fff;
-        color: #000;
-    }
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard!'));
+        }
 
-    .light-mode .footer {
-        color: black;
-    }
-</style>
+        let isLight = false;
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+            isLight = !isLight;
+        }
 
-</head><body>
-    <header>BIZZARD</header><div class="description">
-    host a professional market analysis platform. Buy it now and own the brand before it launches.<br>
-    Expect a powerful market analysis system with tools based on ICT, fundamental, and mathematicall models integrated with the most powerfull AI's generating your best profits.
-</div>
-
-<div class="candlestick-container">
-    <div class="candle green"></div>
-    <div class="candle red"></div>
-    <div class="candle green"></div>
-    <div class="candle green"></div>
-</div>
-
-<div class="buttons">
-    <button onclick="copyToClipboard('0x93c9ac00c6dffde17511080c84064727733ec144')">Copy Binance Address</button><br>
-    <button onclick="copyToClipboard('BG93MYFN401210E2118897')">Copy MyFin IBAN</button>
-    <button onclick="window.location.href='https://t.me/Beamieurala'">Telegram</button><br>
-    <button onclick="window.location.href='mailto:benamieuralaeddine@gmail.com'">Email</button>
-    <button onclick="window.location.href='https://wa.me/213658560659'">WhatsApp</button>
-</div>
-
-<div class="description">
-    The services will be powered by AI and a long experience in programming and finance
-</div>
-
-<div class="logo-container">
-    <img src="https://raw.githubusercontent.com/54-ismail-man/bizzard-landing/main/Assets/55be72dabff0ac30ba9f1e450527689e.png" alt="Google AI Logo" class="w-8 h-8 mr-2">
-
-</div>
-
-<div class="footer">
-    © 2025 •BIZZARD• all rights reserved.
-</div>
-
-<script>
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => alert('Copied!'));
-    }
-
-    let isLight = false;
-    function toggleMode() {
-        document.body.classList.toggle('light-mode');
-        isLight = !isLight;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const switchBtn = document.createElement('button');
-        switchBtn.innerText = 'Switch Mode';
-        switchBtn.style.position = 'fixed';
-        switchBtn.style.bottom = '20px';
-        switchBtn.style.right = '20px';
-        switchBtn.onclick = toggleMode;
-        document.body.appendChild(switchBtn);
-    });
-</script>
-
-</body></html>
+        document.addEventListener('DOMContentLoaded', () => {
+            const switchBtn = document.createElement('button');
+            switchBtn.innerText = '🌓 Switch Mode';
+            switchBtn.style.position = 'fixed';
+            switchBtn.style.bottom = '20px';
+            switchBtn.style.right = '20px';
+            switchBtn.style.zIndex = '1000';
+            switchBtn.onclick = toggleMode;
+            document.body.appendChild(switchBtn);
+        });
+    </script>
+</body>
+</html>
